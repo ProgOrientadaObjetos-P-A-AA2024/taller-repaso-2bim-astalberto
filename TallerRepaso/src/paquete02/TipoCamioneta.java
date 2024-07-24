@@ -54,18 +54,20 @@ public class TipoCamioneta extends Vehiculo {
 
     @Override
     public String toString() {
-        String mensaje = String.format("""
-                                       Vehiculo Sub
+            String mensaje = String.format("""
+                                       Vehiculo Camioneta
                                        %s
                                        Marca: %s
                                        Precio Base: %.2f
                                        Porcentaje Adicional fijo por importacion: %.2f
                                        Valor Adicional fijo de importacion: %.2f
-                                       Porcentaje Seguro: %.2f
                                        Precio Final %.2f
-                                       """, obtenerPropietario(), obtenerMarca(), obtenerPrecioBase(),
+                                       """, obtenerPropietario(),
+                                       obtenerMarca(),
+                                       obtenerPrecioBase(),
                 obtenerPorcentajeAdicionalImportacion(),
-                obtenerAdicionalImportacion(), obtenerPrecioFinal());
+                obtenerAdicionalImportacion(),
+                obtenerPrecioFinal());
         return mensaje;
     }
 
