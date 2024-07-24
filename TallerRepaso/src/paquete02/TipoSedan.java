@@ -46,10 +46,10 @@ public class TipoSedan extends Vehiculo {
     }
 
     @Override
-    public double calcularPrecioFinal() {
+    public void calcularPrecioFinal() {
         establecerDescuento();
         establecerSeguroMecanico();
-        return obtenerPrecioBase() - obtenerDescuento() + obtenerSeguroMecanico();
+        establecerPrecioFinal(obtenerPrecioBase() - obtenerDescuento() + obtenerSeguroMecanico());
     }
 
     @Override

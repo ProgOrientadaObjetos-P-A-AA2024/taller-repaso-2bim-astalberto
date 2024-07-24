@@ -46,10 +46,10 @@ public class TipoCamioneta extends Vehiculo {
     }
 
     @Override
-    public double calcularPrecioFinal() {
+    public void calcularPrecioFinal() {
         calcularAdicionalImportacion();
         calcularSeguroMantenimiento();
-        return obtenerPrecioBase() + obtenerAdicionalImportacion() + obtenerSeguroMantenimiento();
+        establecerPrecioFinal(obtenerPrecioBase() + obtenerAdicionalImportacion() + obtenerSeguroMantenimiento());
     }
 
     @Override

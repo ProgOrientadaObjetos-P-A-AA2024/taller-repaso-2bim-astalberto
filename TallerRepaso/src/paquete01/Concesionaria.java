@@ -78,7 +78,11 @@ public class Concesionaria {
         if (vehiculo.obtenerPrecioFinal() > obtenerCostoVehiculoMasCaro()) {
             establecerCostoVehiculoMasCaro(vehiculo.obtenerPrecioFinal());
         }
-        if (vehiculo.obtenerPrecioFinal() < obtenerCostoVehiculoMasBarato()) {
+        if (obtenerCostoVehiculoMasBarato() != 0) {
+            if (vehiculo.obtenerPrecioFinal() < obtenerCostoVehiculoMasBarato()) {
+                establecerCostoVehiculoMasBarato(vehiculo.obtenerPrecioFinal());
+            }
+        } else {
             establecerCostoVehiculoMasBarato(vehiculo.obtenerPrecioFinal());
         }
     }
@@ -87,7 +91,7 @@ public class Concesionaria {
     public String toString() {
         String mensaje = String.format("Concesionaria %s\n", obtenerNombre());
         for (int i = 0; i < obtenerListadoVehiculos().size(); i++) {
-            mensaje = String.format("%s%s\n", mensaje, obtenerListadoVehiculos().get(i));
+            mensaje = String.format("%s\n%s", mensaje, obtenerListadoVehiculos().get(i));
         }
         mensaje = String.format("""
                                 %s

@@ -20,9 +20,9 @@ public class TipoSuv extends Vehiculo {
     }
 
     @Override
-    public double calcularPrecioFinal() {
+    public void calcularPrecioFinal() {
         double seguroPersonas = (obtenerPrecioBase() * obtenerPorcentajeSeguro()) / 100;
-        return obtenerPrecioBase() + seguroPersonas;
+        establecerPrecioFinal(obtenerPrecioBase() + seguroPersonas);
     }
 
     public void establecerPorcentajeSeguro(double porcenS) {
